@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Matematika</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+   
+    <h5>Cvičení matematiky</h5>
+    <br />
+    <label for= "tex5">náhoda prvního čísla a:</label>
+    <input type="number" id="tex5" class="volba" style="width:100px" value="10">
+<br>
+<br>
+<label for= "tex2"> znaménko ( + - * / ):</label>
+    <input type="text"  id="tex2" class="volba" style="width:50px" value="*">
+    <br>
+    <br>
+<label for= "tex7">nahoda druhého čísla do:</label>
+    <input type="number"  id="tex7" class="volba" style="width:100px" value="10">
+    <br>
+    <input type="text" id="tex8" style="width:100px" disabled>
+
+<hr />
+    <label for= "tex1">čislo a:</label>
+    <input type="number"  id="tex1" style="width:100px" disabled>
+
+
+<label for= "tex3">čislo b:</label>
+    <input type="number" id="tex3" style="width:100px" disabled>
+
+<label for= "tex4">=</label>
+    <input type="number"  id="tex4" class="vysledek" style="width:100px">
+    <button onclick="klik()"> OK</button>
+    
+    <br />
+    <textarea id="tex9" style="width:50%; height: 150px; " disabled>
+</textarea>
+    <table>
+    </table>
+
+    <script>
+        var a, b, c, d, e, f, g = 0;
+        function klik() {
+            g = document.getElementById('tex4').value;
+            document.getElementById('tex8').value = c;
+            if (g == c) {
+                document.getElementById('tex8').style.backgroundColor = "green";
+                document.getElementById('tex9').value = document.getElementById('tex9').value + "\n" + document.getElementById('tex1').value + document.getElementById('tex2').value + document.getElementById('tex3').value + "=" + document.getElementById('tex4').value + " • ";
+
+            }
+            else {
+                document.getElementById('tex8').style.backgroundColor = "red";
+                document.getElementById('tex9').value = document.getElementById('tex9').value + "\n" + document.getElementById('tex1').value + document.getElementById('tex2').value + document.getElementById('tex3').value + "=" + document.getElementById('tex4').value + " X ";
+
+            };
+            
+           
+            d = document.getElementById('tex5').value;
+            a = Math.round(Math.random() * d);
+            document.getElementById('tex1').value = a;
+
+            e = document.getElementById('tex7').value;
+            b = Math.round(Math.random() * e);
+            document.getElementById('tex3').value = b;
+
+
+
+            if (document.getElementById('tex2').value === "*") c = a * b;
+            if (document.getElementById('tex2').value === "/") c = a / b;
+            if (document.getElementById('tex2').value === "+") c = a + b;
+            if (document.getElementById('tex2').value === "-") c = a - b;
+
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
